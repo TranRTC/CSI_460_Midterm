@@ -9,8 +9,12 @@ import androidx.activity.enableEdgeToEdge
 
 class RollDice : AppCompatActivity() {
 
+
+    // The variable named "currentAction" will be set to one of these values
+    // to keep track of the state before each action is executed in the flow
+
     enum class GameAction {
-        RESET, CONFIRM_BET, ROLL_DICE, APPLY_SCORE, CHECK_WIN, GAME_OVER
+        RESET, CONFIRM_BET, ROLL_DICE, APPLY_SCORE, GAME_OVER
     }
 
     private var currentAction = GameAction.RESET
@@ -30,6 +34,7 @@ class RollDice : AppCompatActivity() {
     private lateinit var dice3: ImageView
     private lateinit var textStatus: TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -46,6 +51,16 @@ class RollDice : AppCompatActivity() {
         dice3 = findViewById(R.id.dice3)
         textStatus = findViewById(R.id.textGameStatus)
 
+
+        // Event listeners for buttons' press
+
+        findViewById<Button>(R.id.buttonConfirmBetPlayer1).setOnClickListener {
+            if (isPlayer1Turn) confirmBet(1)
+        }
+        findViewById<Button>(R.id.buttonConfirmBetPlayer2).setOnClickListener {
+            if (!isPlayer1Turn) confirmBet(2)
+        }
+
         findViewById<Button>(R.id.buttonRollPlayer1).setOnClickListener {
             if (isPlayer1Turn && currentAction == GameAction.ROLL_DICE) handleRoll(1)
         }
@@ -60,12 +75,6 @@ class RollDice : AppCompatActivity() {
             if (!isPlayer1Turn) applyScore(2)
         }
 
-        findViewById<Button>(R.id.buttonConfirmBetPlayer1).setOnClickListener {
-            if (isPlayer1Turn) confirmBet(1)
-        }
-        findViewById<Button>(R.id.buttonConfirmBetPlayer2).setOnClickListener {
-            if (!isPlayer1Turn) confirmBet(2)
-        }
 
         findViewById<Button>(R.id.buttonReset).setOnClickListener {
             resetGame()
@@ -74,6 +83,8 @@ class RollDice : AppCompatActivity() {
         resetGame()
     }
 
+
+    // ResetGame
     private fun resetGame() {
         player1Points = 0
         player2Points = 0
@@ -104,6 +115,9 @@ class RollDice : AppCompatActivity() {
         updateStatus("Game reset. Player 1's turn. Waiting for bet.")
     }
 
+
+    // confirmBet
+
     private fun confirmBet(player: Int): Boolean {
         if (currentAction != GameAction.CONFIRM_BET) return false
         val bet = getBetAmount(player)
@@ -115,6 +129,9 @@ class RollDice : AppCompatActivity() {
         return true
     }
 
+
+    // handleRoll
+
     private fun handleRoll(player: Int) {
         if (currentAction != GameAction.ROLL_DICE) return
         val values = List(3) { (1..6).random() }
@@ -124,6 +141,9 @@ class RollDice : AppCompatActivity() {
         updateStatus("Player $player rolled: ${values.joinToString(", ")} (Total: $currentRollTotal).")
         if (rollCount == 3) applyScore(player)
     }
+
+
+    // applyScore
 
     private fun applyScore(player: Int) {
         if (currentAction != GameAction.ROLL_DICE) return
@@ -148,6 +168,7 @@ class RollDice : AppCompatActivity() {
         checkWinCondition(player)
     }
 
+    // checkWinCondition
     private fun checkWinCondition(player: Int) {
         if (player1Points >= 100 || player2Points >= 100) {
             updateStatus("Player $player wins the pot! Game over.")
@@ -158,6 +179,7 @@ class RollDice : AppCompatActivity() {
         }
     }
 
+    //getBetAmount
     private fun getBetAmount(player: Int): Int {
         val input = if (player == 1)
             findViewById<EditText>(R.id.editBetPlayer1).text.toString()
@@ -166,6 +188,8 @@ class RollDice : AppCompatActivity() {
         return input.toIntOrNull() ?: 0
     }
 
+
+    // validateBet
     private fun validateBet(player: Int, bet: Int): Boolean {
         val balance = if (player == 1) player1Balance else player2Balance
         return if (bet <= 0 || bet > balance) {
@@ -174,6 +198,8 @@ class RollDice : AppCompatActivity() {
         } else true
     }
 
+
+    // switchTurn
     private fun switchTurn() {
         isPlayer1Turn = !isPlayer1Turn
         rollCount = 0
@@ -182,7 +208,7 @@ class RollDice : AppCompatActivity() {
         updateStatus("Turn switched. Player ${if (isPlayer1Turn) 1 else 2}'s turn. Waiting for bet.")
     }
 
-
+    // updateDiceImages
     private fun updateDiceImages(values: List<Int>) {
         val imageIds = listOf(dice1, dice2, dice3)
         values.forEachIndexed { i, v ->
@@ -195,6 +221,7 @@ class RollDice : AppCompatActivity() {
         textStatus.text = message
     }
 
+    // disableAllButtons
     private fun disableAllButtons() {
         findViewById<Button>(R.id.buttonRollPlayer1).isEnabled = false
         findViewById<Button>(R.id.buttonRollPlayer2).isEnabled = false
