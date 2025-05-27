@@ -1,8 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+
+            <ImageView
+                android:id="@+id/imageApp1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/app1_image"/>
+
+
+            <Button
+                android:id="@+id/buttonApp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roll Dice" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:id="@+id/imageApp2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/app2_image"/>
+
+            <Button
+                android:id="@+id/buttonApp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank Account" />
+
+            <TextView
+                android:id="@+id/textCurrentAccountBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="20dp">
+
+
+
+
+        <TextView
+            android:id="@+id/textApp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Midterm's Assignment | Application"
+            android:gravity="end"/>
+
+
+        <TextView
+            android:id="@+id/textCourse"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Course: CSI360 | Mobile Development"
+            android:gravity="end"/>
+
+
+        <TextView
+            android:id="@+id/textInstructor"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Insructor | Naser Chowdhury"
+            android:gravity="end"/>
+
+        <TextView
+            android:id="@+id/textStudent"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Student | Quoc Bao Tran"
+            android:gravity="end"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

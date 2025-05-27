@@ -67,7 +67,7 @@
 
             <TextView
                 android:id="@+id/textPlayer1Money"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="balance $50" />
@@ -75,7 +75,7 @@
 
             <TextView
                 android:id="@+id/textPlayer1Score"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="score 0" />
@@ -89,7 +89,7 @@
 
             <EditText
                 android:id="@+id/editBetPlayer1"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:hint="enter bet"/>
@@ -142,7 +142,7 @@
 
             <EditText
                 android:id="@+id/editBetPlayer2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:hint="enter bet" />

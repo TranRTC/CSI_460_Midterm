@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BankAccount"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="40dp"
+
+        >
+
+        <TextView
+            android:id="@+id/textAccountInfo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Account Information"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:textSize="18dp"
+            android:textStyle="bold"
+
+
+            />
+
+        <TextView
+            android:id="@+id/textAccountBankName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="left"
+            android:text="Account Name"
+            />
+
+        <TextView
+            android:id="@+id/textAccountNumber"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="left"
+            android:text="Account Number"/>
+
+        <TextView
+            android:id="@+id/textAccountBalance"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="left"
+            android:text="Account Balance"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="right"
+        android:padding="40dp">
+
+
+        <EditText
+            android:id="@+id/editAmount"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Enter number"
+            android:gravity="left"/>
+
+        <Button
+            android:id="@+id/buttonDeposit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deposit"
+            />
+        <Button
+            android:id="@+id/buttonWithdraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Withdraw"/>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
