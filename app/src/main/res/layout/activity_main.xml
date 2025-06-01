@@ -37,7 +37,8 @@
                 android:id="@+id/buttonApp1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Roll Dice" />
+                android:text="Roll Dice"
+                android:textSize="24dp"/>
 
 
         </LinearLayout>
@@ -61,15 +62,8 @@
                 android:id="@+id/buttonApp2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bank Account" />
-
-            <TextView
-                android:id="@+id/textCurrentAccountBalance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                />
-
+                android:text="Account"
+                android:textSize="24dp"/>
 
 
         </LinearLayout>
@@ -93,8 +87,10 @@
             android:id="@+id/textApp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:text="Midterm's Assignment | Application"
-            android:gravity="end"/>
+            android:text="Assignment | Application"
+            android:gravity="end"
+            android:textSize="24dp"
+            android:textStyle="bold"/>
 
 
         <TextView
@@ -102,7 +98,9 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="Course: CSI360 | Mobile Development"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textSize="20dp"
+            />
 
 
         <TextView
@@ -110,14 +108,16 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="Insructor | Naser Chowdhury"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/textStudent"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="Student | Quoc Bao Tran"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textSize="20dp"/>
 
 
 

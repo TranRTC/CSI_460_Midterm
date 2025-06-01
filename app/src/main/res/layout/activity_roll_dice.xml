@@ -49,7 +49,9 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:text="Winning Pot: $0" />
+        android:text="Winning Pot: $0"
+        android:textSize="24dp"
+        android:textStyle="bold"/>
 
 
     <LinearLayout
@@ -63,14 +65,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/textPlayer1Money"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="balance $50" />
+                android:text="balance $50"
+                android:textSize="24dp"/>
 
 
             <TextView
@@ -78,35 +82,41 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="score 0" />
+                android:text="score 0"
+                android:textSize="24dp"/>
 
             <Button
                 android:id="@+id/buttonKeepScorePlayer1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Keep" />
+                android:text="Keep Score"
+                android:textSize="22dp"
+                />
 
             <EditText
                 android:id="@+id/editBetPlayer1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:hint="enter bet"/>
+                android:hint="enter bet"
+                android:textSize="22dp"/>
 
             <Button
                 android:id="@+id/buttonConfirmBetPlayer1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="confirm bet" />
+                android:text="confirm bet"
+                android:textSize="22dp"/>
 
             <Button
                 android:id="@+id/buttonRollPlayer1"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Roll Player1" />
+                android:text="RollPlayer1"
+                android:textSize="22dp"/>
 
 
         </LinearLayout>
@@ -116,6 +126,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
+            android:gravity="center"
             >
 
 
@@ -124,42 +135,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="balance $50" />
+                android:text="balance $50"
+                android:textSize="24dp"/>
 
             <TextView
                 android:id="@+id/textPlayer2Score"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="scores 0" />
+                android:text="scores 0"
+                android:textSize="24dp"/>
 
             <Button
                 android:id="@+id/buttonKeepScorePlayer2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Keep" />
+                android:text="Keep Score"
+                android:textSize="22dp"/>
 
             <EditText
                 android:id="@+id/editBetPlayer2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:hint="enter bet" />
+                android:hint="enter bet"
+                android:textSize="22dp"/>
 
             <Button
                 android:id="@+id/buttonConfirmBetPlayer2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="confirm bet" />
+                android:text="confirm bet"
+                android:textSize="22dp"/>
 
             <Button
                 android:id="@+id/buttonRollPlayer2"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Roll Player2" />
+                android:text="RollPlayer2"
+                android:textSize="22dp"/>
 
 
         </LinearLayout>
@@ -182,9 +199,10 @@
             android:id="@+id/textGameStatus"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="1.8"
 
-            android:text="game status" />
+            android:text="game status"
+            android:textSize="22dp"/>
 
 
         <Button
@@ -193,7 +211,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
-            android:text="Reset" />
+            android:text="Reset Game"
+            android:textSize="22dp"/>
 
 
     </LinearLayout>

@@ -85,12 +85,12 @@ class BankAccount : AppCompatActivity() {
         balanceText.text = "Balance: $${String.format("%.2f", account.balance)}"
     }
 
-    // prepare and return result to MainActivity
+    // prepare and return result to BankAccountDetails activity
     private fun returnResult() {
-        val intent = Intent()
+
+        val intent = Intent(this, BankAccountDetails::class.java)
         intent.putExtra("updatedAccount", account)
-        setResult(RESULT_OK, intent)
-        finish()
+        startActivity(intent)
     }
 
 

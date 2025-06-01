@@ -10,8 +10,10 @@ import androidx.activity.enableEdgeToEdge
 class RollDice : AppCompatActivity() {
 
 
-    // The variable named "currentAction" will be set to one of these values
+    // The variable named "currentAction" will be set to one of these values: RESET, CONFIRM_BET, ROLL_DICE, APPLY_SCORE, GAME_OVER
     // to keep track of the state before each action is executed in the flow
+    // The flow of actions is setup like this RESET - CONFIRM_BET - ROLL_DICE - APPLY_SCORE - GAM_OVER
+    // Each action when done will set the variable "currentAction" to next action name in the above flow to allow the next action happen)
 
     enum class GameAction {
         RESET, CONFIRM_BET, ROLL_DICE, APPLY_SCORE, GAME_OVER
@@ -45,7 +47,7 @@ class RollDice : AppCompatActivity() {
             insets
         }
 
-        // UI hookup
+        // declare variables to hook with the UI elements
         dice1 = findViewById(R.id.dice1)
         dice2 = findViewById(R.id.dice2)
         dice3 = findViewById(R.id.dice3)

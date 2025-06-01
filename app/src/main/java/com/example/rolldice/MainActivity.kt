@@ -50,6 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Receive updated account back from BankAccount
+
+
+    /*
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -74,6 +77,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    */
 
 
 }
